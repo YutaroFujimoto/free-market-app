@@ -6,13 +6,25 @@
     </head>
     <body>
         <h3>学籍番号:<br><input type="text" name="number" size="15"></h3>
-        <h3>パスワード</h3>
-        <h3>ユーザー名</h3>
-        <h3>アイコン（仮）</h3>
-        <h3>住所</h3>
-        <h3>メールアドレス</h3>
-        <h3>取引に使うツールの情報(LINE, Twitterなど)</h3>
-        <h3>自己紹介</h3>
-        <button>保存ボタン(押すとログイン画面へ)</button>
+        <h3>パスワード:<br><INPUT TYPE="password" SIZE="30" MAXLENGTH="8"></h3>
+        <h3>ユーザー名:<br><input type="text" name="name" size="15"></h3>
+        <h3>アイコン（仮）:</h3>
+        <form method="post" enctype="multipart/form-data">
+            <div id="dragDropArea">
+                <div class="drag-drop-inside">
+                    <p class="drag-drop-info">ここにファイルをドロップ</p>
+                    <p>または</p>
+                    <p class="drag-drop-buttons">
+                        <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+                    </p>
+                    <div id="previewArea"></div>
+                </div>
+            </div>
+        </form>
+        <h3>住所:<br><input type="text" name="address" size="15"></h3>
+        <h3>メールアドレス:<br><input type="text" name="mailaddress" size="15"></h3>
+        <h3>取引に使うツールの情報(LINE, Twitterなど):<br><input type="text" name="tool" size="15"></h3>
+        <h3>自己紹介:<br><input type="text" name="introduce" size="15"></h3>
+        <button><a href="http://localhost:8000/freemarket/"><b>保存ボタン</b>(ログイン画面へ)</a> </button>
     </body>
 </html>

@@ -28,3 +28,9 @@ def information(request):
 
 def change_information(request):
     return render(request, 'freemarket/change_information.html')
+
+def exhibit_finished(request):
+    return render(request, 'freemarket/exhibit_finished.html')
+
+def sell_page(request):
+    return render(request, 'freemarket/sell_page.html')
