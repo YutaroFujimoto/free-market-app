@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
+    context={
+        "articles":Article.objets.all()
+    }
     return render(request, 'freemarket/index.html')
     
 def product_list(request):
