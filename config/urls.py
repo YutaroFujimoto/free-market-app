@@ -19,5 +19,5 @@ from freemarket import views as freemarket_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('freemarket/', include('freemarket.urls')),
+    path('', include('freemarket.urls')),
 ]

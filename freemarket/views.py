@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
+
 
 # Create your views here.
 def index(request):
@@ -9,10 +11,23 @@ def index(request):
     return render(request, 'freemarket/index.html')
     
 def product_list(request):
-    return render(request, 'freemarket/product_list.html')
+    products = Product.objects.all()
+    context = {
+        'products': products
+    }
+    return render(request, 'freemarket/product_list.html', context)
 
-def product_detail(request):
-    return render(request, 'freemarket/product_detail.html')
+def product_detail(request, product_id):
+    try:
+        product = Product.objects.get(pk=product_id)
+        related_products = Product.objects.filter(genre=product.genre)
+    except Product.DoesNotExist:
+        raise Http404("Product does not exist")
+    context = {
+		'product': product,
+        'related_products': related_products,
+	}
+    return render(request, 'freemarket/product_detail.html', context)
 
 def confirm(request):
     return render(request, 'freemarket/confirm.html')

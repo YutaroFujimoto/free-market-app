@@ -5,6 +5,12 @@
         <title>フリマアプリの商品一覧</title>
     </head>
     <body>
-        <h1>写真</h1>
+        <h1>商品一覧</h1>
+        {% for product in products %}
+        <div>
+        <img src='{{ MEDIA_URL }}{{product.picture_1}}' width="100" onclick="location.href='{% url 'product_detail' product.id %}'">
+        <h4>￥{{ product.price }}</h4>
+        </div>
+        {% endfor %}
     </body>
 </html>

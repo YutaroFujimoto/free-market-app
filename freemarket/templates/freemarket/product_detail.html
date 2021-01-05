@@ -6,5 +6,26 @@
     </head>
     <body>
         <h1>商品の詳細</h1>
+        <img src='{{ MEDIA_URL }}{{product.picture_1}}' width="250">
+        <img src='{{ MEDIA_URL }}{{product.picture_2}}' width="250">
+        <img src='{{ MEDIA_URL }}{{product.picture_3}}' width="250">
+        <img src='{{ MEDIA_URL }}{{product.picture_4}}' width="250">
+        <p>商品名：{{ product.name }}</p>
+        <p>ジャンル：{{ product.genre }}</p>
+        <p>商品説明：{{ product.explanation }}</p>
+        <p>商品の状態：{{ product.condition }}</p>
+        <p>値段：￥{{ product.price }}</p>
+        <p>配送料の負担：{{ product.shipping_cost }}</p>
+
+        <button onclick="location.href='{% url 'contact' %}'">購入確定</button>
+        <button onclick="location.href='{% url 'seller_information' %}'">出品者の情報</button>
+        <hr>
+        <h2>関連の商品</h2>
+        {% for related_product in related_products %}
+        <div>
+        <img src='{{ MEDIA_URL }}{{related_product.picture_1}}' width="100" onclick="location.href='{% url 'product_detail' related_product.id %}'">
+        <h4>￥{{ related_product.price }}</h4>
+        </div>
+        {% endfor %}
     </body>
 </html>
