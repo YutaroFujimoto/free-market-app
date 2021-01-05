@@ -57,8 +57,6 @@ def exhibit_finished(request):
     return render(request, 'freemarket/exhibit_finished.html')
 
 def sell_page(request):
-    if (request.method=='POST'):
-        sell_name=
     return render(request, 'freemarket/sell_page.html')
 
 def new_information(request):
