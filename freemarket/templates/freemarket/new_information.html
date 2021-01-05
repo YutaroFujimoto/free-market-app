@@ -7,6 +7,25 @@
         <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
+
+        <form action="{% url 'information' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="titleInput"><b>学籍番号:</b></label>
+                <input id="titleInput" name="title" placeholder="s1f10xxxxxx">
+                <label for="titleInput"><b>パスワード:</b></label>
+                <input id="passInput" name="password" placeholder="password">
+                <label for="B"><b>ユーザー名:</b></label>
+                <input id="B" name="name" placeholder="山田　太郎">
+            </div>
+            <div>
+                <label for="textInput">Text</label>
+                <textarea id="textInput" name="text" rows="3"></textarea>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+
         <h3>学籍番号:<br><input type="text" name="number" size="15"></h3>
         <h3>パスワード:<br><INPUT TYPE="password" SIZE="30" MAXLENGTH="8"></h3>
         <h3>ユーザー名:<br><input type="text" name="name" size="15"></h3>
@@ -33,23 +52,7 @@
 
 
 
-        <form action="{% url 'information' %}" method="post">
-            {% csrf_token %}
-            <div>
-                <label for="titleInput">学籍番号:</label>
-                <input id="titleInput" name="number" placeholder="Input title">
-            </div>
-            <div>
-                <label for="titleInput">パスワード:</label>
-                <input id="titleInput" name="password" placeholder="Input title">
-            </div>
-            <div>
-                <label for="textInput">Text</label>
-                <textarea id="textInput" name="text" rows="3"></textarea>
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
+
             <p><a href="http://localhost:8000/freemarket/index">Top</a></p>
          </form>
     </body>
