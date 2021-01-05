@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Product
+from .models import Userdata
 
 
 # Create your views here.
@@ -57,8 +58,6 @@ def exhibit_finished(request):
     return render(request, 'freemarket/exhibit_finished.html')
 
 def sell_page(request):
-    if (request.method=='POST'):
-        sell_name=
     return render(request, 'freemarket/sell_page.html')
 
 def new_information(request):
