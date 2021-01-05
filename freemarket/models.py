@@ -13,7 +13,14 @@ class Product(models.Model):
     picture_2 = models.ImageField(upload_to='images/')
     picture_3 = models.ImageField(upload_to='images/')
     picture_4 = models.ImageField(upload_to='images/')
-
     
     def __str__(self):
         return self.name
+
+
+
+class Userdata(models.Model):
+    title = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+
+

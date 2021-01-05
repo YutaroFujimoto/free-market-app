@@ -41,24 +41,13 @@ def login(request):
 def information(request):
     # new_information.htmlで投稿(Submit)した場合
     if (request.method == 'POST'):
-        newblog = {
-            'id': 10,
-            'title': request.POST['title'],
-            'password': request.POST['password'],
-            'name': request.POST['name'],
-        }
+        data = Userdata(password = request.POST["password"], title = request.POST["title"],)
+        data.save()
         # information.htmlへ
-        return render(request, 'freemarket/detail.html', newblog)    
-    context = {
-        'articles': [
-            {   
-            'id': 1,
-            'title': 'Post 01',
-            'body': 'text post.\nLorem ipsum dolor sit amet, \nconsecterur adipiscing elit, \n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n',
-            }    
-        ]
-    }
-    return render(request, 'freemarket/information.html', context)
+        context = {"data" : data,}
+        return render(request, 'freemarket/detail.html', context)    
+
+
 
 def change_information(request):
     return render(request, 'freemarket/change_information.html')
