@@ -2,15 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>フリマアプリの出品ページ</title>
+        <title>フリーマーケットアプリの出品ページ</title>
         <link rel="stylesheet" type="text/css" href="static/sell.css">
     </head>
     <body>
+        <form>
         <h1>商品名:<input type="text" name="sell_name"></h1>
         <h1>値段:<input type="text" name="price"></h1>
         <h1>商品の説明:<input type="text" name="description"></h1>
-        <h1>ジャンル:<input type="text" name="genre"></h1>
+        <h1>ジャンル:
+            <select>
+                <option value='value1' selected>衣服</option>
+            　　<option value='value2' selected>家電</option>
+            　　<option value='value3' selected>娯楽、スポーツ</option>
+           　　 <option value='value4' selected>美容</option>
+            　　<option value='value5' selected>家具、小物</option>
+           　　 <option value='value6' selected>その他</option>
+        　　</select>
+    　　　</h1>
         <h1>商品の状態:<input type="text" name="condition"></h1>
         <button type="button">出品確定</button>
+        </form>
     </body>
 </html>
