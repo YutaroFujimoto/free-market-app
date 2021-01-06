@@ -20,7 +20,13 @@ class Product(models.Model):
 
 
 class Userdata(models.Model):
-    title = models.CharField(max_length=200)
-    password = models.CharField(max_length=200)
-
+    title = models.CharField(null = True, max_length=200)
+    password = models.CharField(null = True, max_length=200)
+    name = models.CharField(null = True, max_length=200)
+    icon = models.CharField(null = True, max_length=200)
+    address = models.CharField(null = True, max_length=200)
+    mail = models.CharField(null = True, max_length=200)
+    line = models.CharField(null = True, max_length=200)
+    twitter = models.CharField(null = True, max_length=200)
+    text = models.CharField(null = True, max_length=200)
 

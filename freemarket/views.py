@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Product
 from .models import Userdata
-
 
 # Create your views here.
 def index(request):
@@ -40,13 +39,16 @@ def login(request):
     return render(request, 'freemarket/login.html')
 
 def information(request):
-    # new_information.htmlで投稿(Submit)した場合
-    if (request.method == 'POST'):
-        data = Userdata(password = request.POST["password"], title = request.POST["title"],)
-        data.save()
-        # information.htmlへ
-        context = {"data" : data,}
-        return render(request, 'freemarket/detail.html', context)    
+    # 情報が入力された場合
+    if request.method == 'POST':
+        data = Userdata(title = request.POST["title"], password = request.POST["password"], name = request.POST["name"], icon = request.POST["icon"], address = request.POST["address"], mail = request.POST["mail"], line = request.POST["line"], twitter = request.POST["twitter"], text = request.POST["text"],)
+        data.save() # データベースの更新
+        context = {'data': data}
+        return render(request, 'freemarket/detail.html', context) 
+    else:
+        data = Userdata.objects.all() # データの取り出し
+        context = {"data" : data,} # 辞書型
+        return render(request, 'freemarket/information.html', context) # viewの表示
 
 
 
@@ -63,17 +65,5 @@ def sell_page(request):
 def new_information(request):
     return render(request, 'freemarket/new_information.html')
 
-def detail(request, article_id):
-	try:
-		article = Article.objects.get(pk=article_id)
-	except Article.DoesNotExist:
-		raise Http404("Article does not exist")
-	if request.method == 'POST':
-		comment = Comment(article=article, text=request.POST['text'])
-		comment.save()
-
-	context = {
-		'article': article,
-		'comments': article.comments.order_by('-posted_at')
-	}
-	return render(request, "freemarket/detail.html", context)
+def detail(request):
+    return render(request, "freemarket/detail.html")
