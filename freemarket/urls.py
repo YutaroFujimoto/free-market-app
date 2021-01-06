@@ -18,3 +18,8 @@ urlpatterns = [
     path('new_information', views.new_information, name='new_information'),
     path('<int:article_id>/', views.detail, name = 'detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# 商品画像アップロード
+ 
+if setting.DEBUT:
+    urlpatterns += static(setting.IMAGE_URL, document_root=setting.IMAGE_ROOT)
