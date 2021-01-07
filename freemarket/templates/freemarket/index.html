@@ -19,14 +19,16 @@
                 </ul>
             </nav>
         </header><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h2 class="no2"><b>さあ！！買ったり売ったりしてみよう！</b></h2>
+        <h2 class="no2"><b>さあ！！売ったり買ったりしてみよう！</b></h2>
         <p><b>東洋大学生徒限定のフリーマーケットアプリ、furima。<br>
             使わなくなった教科書だけでなく、<br>趣味のものや、服なんかの取引も！！<br>
             学生間で自由に売り買いに挑戦してみよう！</b>
         </p><br><br><br><br><br>
-        <button onclick="location.href='{% url 'product_list' %}'" class="no2">買う</button>
-        <button onclick="location.href='{% url 'sell_page' %}'" class="no2">売る</button>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <form>
+            <button onclick="location.href='{% url 'product_list' %}'" class="button1">買う</button>
+            <button onclick="location.href='{% url 'sell_page' %}'" class="button1">売る</button>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- footer -->
         <footer>
           <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>

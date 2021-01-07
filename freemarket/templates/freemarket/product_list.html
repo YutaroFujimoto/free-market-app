@@ -1,10 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>フリマアプリの商品一覧</title>
+        <link rel="stylesheet" href="{% static 'E.css' %}">
     </head>
     <body>
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+        </header><br><br>
         <p>ジャンルで絞る</p>
         <form method="GET" action="{% url 'product_list' %}?genre=genre">
             <div>
@@ -45,5 +59,9 @@
         <h4>￥{{ product.price }}</h4>
         </div>
         {% endfor %}
+        <!-- footer -->
+        <footer>
+            <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>
