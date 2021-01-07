@@ -7,6 +7,18 @@
         <link rel="stylesheet" href="{% static 'sell.css' %}">
     </head>
     <body>
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+        </header><br><br><br><br><br><br><br><br>
         <form method="POST" action="{% url 'exhibit_finished' %}">
             {% csrf_token %}
             <label for="product_nameInput"><b>商品名:</b></label>
@@ -29,7 +41,8 @@
 
             <label for="image_4">写真４</label>
             <input id="image_4" type="file" name="picture_4">
-            <p>ジャンル</p>
+            <br><br>
+            <h3>ジャンル</h3>
             <div>
                 <label for="clothes">衣服</label>
                 <input id="clothes" type="radio" name="genre" value="衣服">
@@ -58,7 +71,8 @@
                 <label for="others">その他</label>
                 <input id="others" type="radio" name="genre" value="その他">
             </div>
-            <p>商品の状態</p>
+            <br><br>
+            <h3>商品の状態</h3>
             <div>
                 <label for="new">新品、未使用</label>
                 <input id="new" type="radio" name="condition" value="新品、未使用">
@@ -77,7 +91,13 @@
 
             <label for="buyer">買い手負担</label>
             <input id="buyer" type="radio" name="shipping_cost" value="買い手負担">
-            <button type="submit" onclick="location.href='{% url 'exhibit_finished' %}'">出品を確定</button>
+            <br><br><br><br><br>
+            <button class="button1" type="submit" onclick="location.href='{% url 'exhibit_finished' %}'">出品を確定</button>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <!-- footer -->
+            <footer>
+                <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+            </footer>
         </form>
     </body>
 </html>
