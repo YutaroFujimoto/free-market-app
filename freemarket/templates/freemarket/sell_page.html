@@ -67,7 +67,19 @@
                     <label for='old'>状態が悪い</label>
                     <input id='old' type='radio' name='condition' value='状態が悪い'>
                 </div>
-        </label>>
+        </label>
+        <label>送料の負担：
+            <form method='POSt' action="{% url 'postage' %}">
+                {% csrf_token %}
+                <div>
+                    <label for='seller'>売り手負担</label>
+                    <input id='seller' type='radio' name='shipping_cost' value='売り手負担'>
+                </div>
+                <div>
+                    <label for='buyer'>買い手負担</label>
+                    <input id='buyer' type='radio' name='shipping_cost' value='買い手負担'>
+                </div>
+            </form>
         <button type="button" onclick="location.href='{% url 'exhibit_finished' %}'">出品を確定</button>
         </form>
     </body>
