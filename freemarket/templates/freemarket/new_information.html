@@ -9,22 +9,19 @@
     <body>
         <header>
             <h1>
-                <a class="no1" href="http://localhost:8000/"><b>バイセル</b></a>
+                <a class="no1" href="http://localhost:8000/"><b>baysell</b></a>
             </h1>
             <nav class="pc-nav">
                 <ul>
                     <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
                     <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
-                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                    <li><a href="http://localhost:8000/new_information"><b>ユーザー登録</b></a></li>
                 </ul>
             </nav>
         </header>
+        <br><br><br><br><br><br>
         <form action="{% url 'information' %}" method="post">
             {% csrf_token %}
-            <br>
-            <br>
-            <br>
-            <br>
             <h3 class="no1">新規ユーザー登録</h3>
             <div>
                 <h3>取引に使う個人情報の登録</h3><br>
@@ -52,11 +49,11 @@
                 <label for="TwitterInput"><b>Twitter ID:</b></label>
                 <input id="TwitterInput" name="twitter" placeholder="@ TWITTER ID"><br>
             </div>
-            <br>
+            <br><br><br>
             <div>
                 <button type="submit" class="button1"><b>保存確定</b></button>
             </div>
-            <br>
+            <br><br><br><br><br>
         </form>
         <!-- footer -->
         <footer>
