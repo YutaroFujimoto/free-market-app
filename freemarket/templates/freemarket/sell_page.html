@@ -7,80 +7,59 @@
         <link rel="stylesheet" href="{% static 'sell.css' %}">
     </head>
     <body>
-        <form>
-            <form method="post" enctype="multipart/form-data">
-                <h3>商品の写真：</h3>
-                <div id="selectArea">
-                    <p class='product_picture'>
-                        <input id="picture" type="file" accept="image/*" value="ファイルを選択" name="product_photo" onChange="photoPreview(event)">
-                    </p>
-                    </div>
-                </div>
-            </form>
-        <label for="product_nameInput"><b>商品名:</b></label>
-        <input id="product_nameInput" name='name' size="10"><br>
-        <label for="priceInput"><b>値段:</b></label>
-        <input id="priceInput" name="price" size='8'><br>
-        <label for="descriptionInput"><b>商品の説明:</b></label>
-        <input id="descriptionInput" name="explanation" size="30"><br>
-        <label>ジャンル:
-            <form method='POST' action="{% url 'exhibit_finished' %}">
-                {% csrf_token %}
-                <div>
-                    <label for='clothes'>衣服</label>
-                    <input id='clothes' type='radio' name='genre' value='衣服'>
-                </div>
-                <div>
-                    <label for='home_appliances'>衣服</label>
-                    <input id='home_appliances' type='radio' name='genre' value='家電'>
-                </div>
-                <div>
-                    <label for='sport'>娯楽、スポーツ</label>
-                    <input id='sport' type='radio' name='genre' value='娯楽、スポーツ'>
-                </div>
-                <div>
-                    <label for='beauty'>美容</label>
-                    <input id='beauty' type='radio' name='genre' value='美容'>
-                </div>
-                <div>
-                    <label for='furniture'>家具、小物</label>
-                    <input id='furniture' type='radio' name='genre' value='家具、小物'>
-                </div>
-                <div>
-                    <label for='others'>その他</label>
-                    <input id='others' type='radio' name='genre' value='その他'>
-                </div>
-            </form>
-    　　</label>
-        <label>商品の状態:
-            <form method='POST' action="{% url 'exhibit_finished' %}">
-                {% csrf_token %}
-                <div>
-                    <label for='new'>新品、未使用</label>
-                    <input id='new' type='radio' name='condition' value='新品、未使用'>
-                </div>
-                <div>
-                    <label for='used'>使用感あり</label>
-                    <input id='used' type='radio' name='condition' value='使用感あり'>
-                </div>
-                <div>
-                    <label for='old'>状態が悪い</label>
-                    <input id='old' type='radio' name='condition' value='状態が悪い'>
-                </div>
-        </label>
-        <label>送料の負担：
-            <form method='POSt' action="{% url 'postage' %}">
-                {% csrf_token %}
-                <div>
-                    <label for='seller'>売り手負担</label>
-                    <input id='seller' type='radio' name='shipping_cost' value='売り手負担'>
-                </div>
-                <div>
-                    <label for='buyer'>買い手負担</label>
-                    <input id='buyer' type='radio' name='shipping_cost' value='買い手負担'>
-                </div>
-            </form>
-        <button type="button" onclick="location.href='{% url 'exhibit_finished' %}'">出品を確定</button>
+        <form method="POST" action="{% url 'exhibit_finished' %}">
+            {% csrf_token %}
+            <label for="product_nameInput"><b>商品名:</b></label>
+            <input id="product_nameInput" name="name" size="10">
+        
+            <label for="priceInput"><b>値段:</b></label>
+            <input id="priceInput" name="price" size="8">
+        
+            <label for="descriptionInput"><b>商品の説明:</b></label>
+            <input id="descriptionInput" name="explanation" size="30">
+            <p>ジャンル</p>
+            <div>
+                <label for="clothes">衣服</label>
+                <input id="clothes" type="radio" name="genre" value="衣服">
+            </div>
+            <div>
+                <label for="food">食べ物</label>
+                <input id="food" type="radio" name="genre" value="食べ物">
+            </div>
+            <div>
+                <label for="home_appliances">電気製品</label>
+                <input id="home_appliances" type="radio" name="genre" value="電気製品">
+            </div>
+            <div>
+                <label for="sport">娯楽、スポーツ</label>
+                <input id="sport" type="radio" name="genre" value="娯楽、スポーツ">
+            </div>
+            <div>
+                <label for="beauty">美容</label>
+                <input id="beauty" type="radio" name="genre" value="美容">
+            </div>
+            <div>
+                <label for="furniture">家具、小物</label>
+                <input id="furniture" type="radio" name="genre" value="家具、小物">
+            </div>
+            <div>
+                <label for="others">その他</label>
+                <input id="others" type="radio" name="genre" value="その他">
+            </div>
+            <p>商品の状態</p>
+            <div>
+                <label for="new">新品、未使用</label>
+                <input id="new" type="radio" name="condition" value="新品、未使用">
+            </div>
+            <div>
+                <label for="used">使用感あり</label>
+                <input id="used" type="radio" name="condition" value="使用感あり">
+            </div>
+            <div>
+                <label for="old">状態が悪い</label>
+                <input id="old" type="radio" name="condition" value="状態が悪い">
+            </div>
+            <button type="submit" onclick="location.href='{% url 'exhibit_finished' %}'">出品を確定</button>
         </form>
     </body>
 </html>
