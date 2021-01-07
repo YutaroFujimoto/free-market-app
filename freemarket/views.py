@@ -60,7 +60,7 @@ def exhibit_finished(request):
     return render(request, 'freemarket/exhibit_finished.html')
 
 def sell_page(request):
-    product_data = Product(name = request.POST["name"], genre = request.POST["genre"], explanation = request.POST["explanation"], condition = request.POST["condition"], price = request.POST["price"], shipping_cost = request.POST["shipping_cost"], picture_1 = request.POST["picture_1"], picture_2 = request.POST["picture_2"], picture_3 = request.POST["picture_3"], picture_4 = request.POST["picture_4"], )
+    product_data = Product(name = request.POST["name"], genre = request.POST["genre"], explanation = request.POST["condition"], condition = request.POST["condition"], price = request.POST["price"], shipping_cost = request.POST["shipping_cost"], picture_1 = request.POST["picture_1"], picture_2 = request.POST["picture_2"], picture_3 = request.POST["picture_3"], picture_4 = request.POST["picture_4"], )
     product_data.save()
     context = {'product_data': product_data}
     return render(request, 'freemarket/sell_page.html', context)
