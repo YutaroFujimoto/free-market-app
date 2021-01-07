@@ -17,6 +17,18 @@
         
             <label for="descriptionInput"><b>商品の説明:</b></label>
             <input id="descriptionInput" name="explanation" size="30">
+
+            <label for="image_1">写真１</label>
+            <input id="image_1" type="file" name="picture_1">
+
+            <label for="image_2">写真２</label>
+            <input id="image_2" type="file" name="picture_2">
+            
+            <label for="image_3">写真３</label>
+            <input id="image_3" type="file" name="picture_3">
+
+            <label for="image_4">写真４</label>
+            <input id="image_4" type="file" name="picture_4">
             <p>ジャンル</p>
             <div>
                 <label for="clothes">衣服</label>
@@ -59,6 +71,12 @@
                 <label for="old">状態が悪い</label>
                 <input id="old" type="radio" name="condition" value="状態が悪い">
             </div>
+            <p>配送料の負担</p>
+            <label for="seller">売り手負担</label>
+            <input id="seller" type="radio" name="shipping_cost" value="売り手負担">
+
+            <label for="buyer">買い手負担</label>
+            <input id="buyer" type="radio" name="shipping_cost" value="買い手負担">
             <button type="submit" onclick="location.href='{% url 'exhibit_finished' %}'">出品を確定</button>
         </form>
     </body>
