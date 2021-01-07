@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>フリマアプリの商品詳細</title>
+        <script src="static/freemarket.js"></script>
     </head>
     <body>
         <h1>商品の詳細</h1>
@@ -17,15 +18,7 @@
         <p>値段：￥{{ product.price }}</p>
         <p>配送料の負担：{{ product.shipping_cost }}</p>
 
-        <button onclick="location.href='{% url 'contact' %}'">購入確定</button>
+        <button onclick="location.href='{% url 'confirm' %}';product_confirm()">購入へ</button>
         <button onclick="location.href='{% url 'seller_information' %}'">出品者の情報</button>
-        <hr>
-        <h2>関連の商品</h2>
-        {% for related_product in related_products %}
-        <div>
-        <img src='{{ MEDIA_URL }}{{related_product.picture_1}}' width="100" onclick="location.href='{% url 'product_detail' related_product.id %}'">
-        <h4>￥{{ related_product.price }}</h4>
-        </div>
-        {% endfor %}
     </body>
 </html>

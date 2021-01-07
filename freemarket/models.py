@@ -18,7 +18,7 @@ class Product(models.Model):
         return self.name
 
 
-
+#ユーザーデータのテーブル
 class Userdata(models.Model):
     title = models.CharField(null = True, max_length=200)
     password = models.CharField(null = True, max_length=200)

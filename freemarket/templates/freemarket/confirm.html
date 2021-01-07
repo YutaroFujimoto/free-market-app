@@ -19,11 +19,27 @@
                 </ul>
             </nav>
         </header><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h1 class="no1">商品の購入確定</h1><br><br><br>
+        <h1 class="no1">商品の購入確定</h1><br>
+        <form method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div>
+                <label for="mailadress">メールアドレス</label>
+                <input id="mailadress" type="radio" name="contact" value="adress">
+            </div>
+            <div>
+                <label for="LINE">LINE(ID)</label>
+                <input id="LINE" type="radio" name="contact" value="line">
+            </div>
+            <div>
+                <label for="Twitter">Twitter</label>
+                <input id="Twitter" type="radio" name="contact" value="twitter">
+            </div>
+            <button type="submit" onclick="location.href='{% url 'contact' %}'">購入確定</button>
+        </form>
         <form>
             <button type="button" class="button1" onclick="location.href='http://localhost:8000/'">Topへ</button>
         </form>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- footer -->
         <footer>
           <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
