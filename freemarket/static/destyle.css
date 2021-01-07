@@ -1,21 +1,104 @@
-h3{
+* {
+    box-sizing: border-box;
+ }
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    letter-spacing : 0.2em;
+ }
+ header {
+    padding: 30px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#ff0505;
+    display: flex;
+    align-items: center;
+ }
+ h1 {
     text-align: center;
-}
+    margin: 0; padding: 0;
+    font-size: 30px;
+ }
+ a {	
+    text-decoration: none;
+    background-color: #ff0000;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+ }
 
-p{
+ a:hover{
+    background-color: #ff7979be;
+    color: #ffffff;
+ }
+
+ a.no1 {	
+    text-decoration: none;
+    background-color: #ff0000;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+ }
+
+ a.no1:hover{
+    background-color: #ff7979be;
+    color: #ffffff;
+ }
+
+ nav {
+    margin: 0 0 0 auto;
+ }
+ ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+ }
+ li {
+    margin: 0 0 0 15px;
+    font-size: 14px;
+ }
+ .main-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('main_visual.jpg') top center / cover no-repeat;
+ }
+ h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: normal;
+    color: #fff;
+ }
+
+ h2.no2 {
+     text-align: center;
+     color: #000000;
+ }
+
+ h3 {
+     text-align: center;
+ }
+
+ h3.no1 {
     text-align: center;
-}
-
-div{
+    font-size: 30px;
+ }
+ 
+ form{
     text-align: center;
-}
+ }
 
+ p {
+     text-align: center;
+ }
 
-form{
-    text-align: center;
-}
+ div {
+     text-align: center;
+ }
 
-button.button1{
+ button.button1{
     text-align: center;
     font-size: 17px;
     font-weight: bold;
@@ -26,9 +109,20 @@ button.button1{
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-}
+ }
 
 button.button1:hover{
     background-color: #ff00008c;
     color: #ffffff;
-}
+ }
+
+ footer {
+    width: 100%;
+    height: 100px; 
+    text-align: center;
+    padding: 20px 0;
+    background-color: #b8b8b8;
+  }
+  .footer-text {
+    color: #fff;
+  }

@@ -4,11 +4,33 @@
     <head>
         <meta charset="UTF-8">
         <title>フリマアプリのトップページ</title>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'B.css' %}">
     </head>
     <body>
+        <header>
+            <h1>
+                <a class="no2" href="http://localhost:8000/login"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/new_information"><b>ユーザー登録</b></a></li>
+                </ul>
+            </nav>
+        </header><br><br><br><br><br><br><br><br><br><br><br>
+        <h1 class="no4">furima</h1>
+        <h3 class="no3"><b>いつでも！どこでも！買って売れる　furima</b></h3>
+        <p><b>東洋大学生徒によるフリーマーケットアプリ、furima。<br>
+            使わなくなった教科書だけでなく、<br>趣味のものや、服なんかの取引も！！<br>
+            学生間で自由に売り買いに挑戦してみよう！</b>
+        </p>
+        <br><br><br>
         <form action="http:localhost/8000/freemarket/information" method="get">
-            <button type="button" class="button1" onclick="location.href='http://localhost:8000/freemarket/information'">ログイン</button>
-        </form>
+            <button type="button" class="button1" onclick="location.href='http://localhost:8000/new_information'">新規ユーザー登録</button>
+        </form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer>
+            <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>
