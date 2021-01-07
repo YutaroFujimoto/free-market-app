@@ -20,6 +20,3 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # 商品画像アップロード
- 
-if setting.DEBUT:
-    urlpatterns += static(setting.IMAGE_URL, document_root=setting.IMAGE_ROOT)

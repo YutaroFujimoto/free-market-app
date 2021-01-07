@@ -8,21 +8,25 @@ def index(request):
     return render(request, 'freemarket/index.html')
     
 def product_list(request):
-    products = Product.objects.all()
-    context = {
-        'products': products
-    }
-    return render(request, 'freemarket/product_list.html', context)
+    if ('genre' in request.GET):
+        context = {
+	        "products": Product.objects.filter(genre=request.GET['genre'])
+	    }
+        return render(request, 'freemarket/product_list.html', context)
+    else:
+        products = Product.objects.all()
+        context = {
+            'products': products
+        }
+        return render(request, 'freemarket/product_list.html', context)
 
 def product_detail(request, product_id):
     try:
         product = Product.objects.get(pk=product_id)
-        related_products = Product.objects.filter(genre=product.genre)
     except Product.DoesNotExist:
         raise Http404("Product does not exist")
     context = {
 		'product': product,
-        'related_products': related_products,
 	}
     return render(request, 'freemarket/product_detail.html', context)
 
@@ -30,6 +34,9 @@ def confirm(request):
     return render(request, 'freemarket/confirm.html')
 
 def contact(request):
+    if request.POST['contact'] == mailadress:
+        context = {
+        }
     return render(request, 'freemarket/contact.html')
 
 def seller_information(request):

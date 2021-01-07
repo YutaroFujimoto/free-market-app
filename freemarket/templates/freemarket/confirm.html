@@ -6,5 +6,21 @@
     </head>
     <body>
         <h1>商品の購入確定</h1>
+        <form method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div>
+                <label for="mailadress">メールアドレス</label>
+                <input id="mailadress" type="radio" name="contact" value="adress">
+            </div>
+            <div>
+                <label for="LINE">LINE(ID)</label>
+                <input id="LINE" type="radio" name="contact" value="line">
+            </div>
+            <div>
+                <label for="Twitter">Twitter</label>
+                <input id="Twitter" type="radio" name="contact" value="twitter">
+            </div>
+            <button type="submit" onclick="location.href='{% url 'contact' %}'">購入確定</button>
+        </form>
     </body>
 </html>

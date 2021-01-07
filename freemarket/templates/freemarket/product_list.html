@@ -5,6 +5,39 @@
         <title>フリマアプリの商品一覧</title>
     </head>
     <body>
+        <p>ジャンルで絞る</p>
+        <form method="GET" action="{% url 'product_list' %}?genre=genre">
+            <div>
+                <label for="clothes">衣服</label>
+                <input id="clothes" value="衣服" type="radio" name="genre">
+            </div>
+            <div>
+                <label for="food">食べ物</label>
+                <input id="food" value="食べ物" type="radio" name="genre">
+            </div>
+            <div>
+                <label for="electricity">電気製品</label>
+                <input id="electricity" type="radio" name="genre">
+            </div>
+            <div>
+                <label for="entertainment_sports">娯楽・スポーツ</label>
+                <input id="entertainment_sports" type="radio" name="genre">
+            </div>
+            <div>
+                <label for="beauty">美容</label>
+                <input id="beauty" type="radio" name="genre">
+            </div>
+            <div>
+                <label for="Furniture_accessories">家具・小物</label>
+                <input id="Furniture_accessories" type="radio" name="genre">
+            </div>
+            <div>
+                <label for="other">その他</label>
+                <input id="other" type="radio" name="genre">
+            </div>
+            <button type="submit">絞る</button>
+            <button type="reset" onclick="location.href='{% url 'product_list' %}'">リセット</button>
+        </form>
         <h1>商品一覧</h1>
         {% for product in products %}
         <div>
