@@ -1,11 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>フリマアプリの出品完了ページ</title>
+        <link rel="stylesheet" href="{% static 'D.css' %}">
     </head>
     <body>
-        <h1>出品が完了しました</h1>
-        <button onclick="location.href='{% url 'index' %}'">ホーム画面に戻る</button>
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+        </header><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1 class="no5">出品が完了しました!</h1><br><br><br>
+        <form>
+            <button class="button1" onclick="location.href='{% url 'index' %}'">ホーム画面に戻る</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </form>
+        <!-- footer -->
+        <footer>
+            <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>

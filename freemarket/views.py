@@ -95,3 +95,6 @@ def new_information(request):
 
 def detail(request):
     return render(request, "freemarket/detail.html")
+
+def change_information(request):
+    return render(request, 'freemarket/change_information.html')
