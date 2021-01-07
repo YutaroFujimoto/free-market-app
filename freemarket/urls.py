@@ -14,10 +14,9 @@ urlpatterns = [
     path('sell_page', views.sell_page, name='sell_page'),
     path('login', views.login, name='login'),
     path('information', views.information, name='information'),
-    path('show_information', views.show_information, name='show_information'),
-    path('<int:userdata_id>', views.information_detail, name='information_detail'),
+    path('change_information', views.change_information, name='change_information'),
     path('new_information', views.new_information, name='new_information'),
     path('<int:article_id>/', views.detail, name = 'detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# 商品画像アップロード
+ 
