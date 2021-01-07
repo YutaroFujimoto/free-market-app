@@ -51,8 +51,8 @@
             </div>
             <button type="submit">絞る</button>
             <button type="reset" onclick="location.href='{% url 'product_list' %}'">リセット</button>
-        </form>
-        <h1>商品一覧</h1>
+        </form><br>
+        <h1 class="no1">商品一覧</h1>
         {% for product in products %}
         <div>
         <img src='{{ MEDIA_URL }}{{product.picture_1}}' width="100" onclick="location.href='{% url 'product_detail' product.id %}'">
