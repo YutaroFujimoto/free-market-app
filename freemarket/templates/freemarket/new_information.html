@@ -4,13 +4,28 @@
     <head>
         <meta charset="UTF-8">
         <title>フリマアプリの新規ユーザー情報登録</title>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'A.css' %}">
     </head>
     <body>
-
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>バイセル</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+        </header>
         <form action="{% url 'information' %}" method="post">
             {% csrf_token %}
-            <h2>新規ユーザー登録</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3 class="no1">新規ユーザー登録</h3>
             <div>
                 <h3>取引に使う個人情報の登録</h3><br>
                 <label for="titleInput"><b>学籍番号:</b></label>
@@ -30,20 +45,22 @@
                 <label for="AddressInput"><b>住所:</b></label>
                 <input id="AddressInput" name="address" placeholder="例：東京都"><br>
                 <label for="MailInput"><b>メールアドレス:</b></label>
-                <input id="MailInput" name="mail" placeholder="例：s1f10xxxxxxx@iniad.org"　size="30"><br>
-                <h3>取引に使うツールの情報の登録</h3><br>
+                <input id="MailInput" name="mail" placeholder="例：s1f10xxxxxxx@iniad.org"　size="30"><br><br>
+                <h3>取引に使うツールの情報の登録</h3>
                 <label for="LineInput"><b>Line ID:</b></label>
                 <input id="LineInput" name="line" placeholder="LINE ID"><br>
-                <label for="TwitterInput"><b>Line ID:</b></label>
-                <input id="TwitterInput" name="twitter" placeholder="TWITTER ID"><br>
+                <label for="TwitterInput"><b>Twitter ID:</b></label>
+                <input id="TwitterInput" name="twitter" placeholder="@ TWITTER ID"><br>
             </div>
+            <br>
             <div>
                 <button type="submit" class="button1"><b>保存確定</b></button>
             </div>
             <br>
-            <form>
-                <button type="button" class="button1" onclick="location.href='http://localhost:8000/'">Topへ</button>
-            </form>
         </form>
+        <!-- footer -->
+        <footer>
+            <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>
