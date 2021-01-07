@@ -48,7 +48,7 @@ def login(request):
 def information(request):
     # 情報が入力された場合
     if request.method == 'POST':
-        data = Userdata(title = request.POST["title"], password = request.POST["password"], name = request.POST["name"], icon = request.POST["icon"], address = request.POST["address"], mail = request.POST["mail"], line = request.POST["line"], twitter = request.POST["twitter"], text = request.POST["text"],)
+        data = Userdata(title = request.POST["title"], password = request.POST["password"], name = request.POST["name"], address = request.POST["address"], mail = request.POST["mail"], line = request.POST["line"], twitter = request.POST["twitter"], text = request.POST["text"],)
         data.save() # データベースの更新
         context = {'data': data}
         return render(request, 'freemarket/detail.html', context) 
