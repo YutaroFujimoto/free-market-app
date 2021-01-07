@@ -59,9 +59,27 @@ def information(request):
 
 
 
-def change_information(request):
-    return render(request, 'freemarket/change_information.html')
+def show_information(request, userdata_id):
+    try:
+        userdata = Userdata.objects.get(pk=userdata_id)
+        related_products = Userdata.objects.filter(genre=userdata.genre)
+    except Userdata.DoesNotExist:
+        raise Http404("Userdata does not exist")
+    context = {
+        'data': data,
+    }
+    return render(request, 'freemarket/show_information.html', context)
 
+def information_detail(request, _id):
+    try:
+        userdata = Userdata.objects.get(pk=userdata_id)
+        related_products = Userdata.objects.filter(genre=userdata.genre)
+    except Userdata.DoesNotExist:
+        raise Http404("Userdata does not exist")
+    context = {
+        'data': data,
+    }
+    return render(request, 'freemarket/show_information.html', context)
 
 def exhibit_finished(request):
     return render(request, 'freemarket/exhibit_finished.html')
