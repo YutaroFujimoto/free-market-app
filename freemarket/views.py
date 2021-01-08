@@ -93,7 +93,6 @@ def sell_page(request):
             return render(request, 'freemarket/exhibit_finished.html')
     else:
         form = UploadForm()
-
     context = {'form': form}
     return render(request, 'freemarket/sell_page.html', context)
 
