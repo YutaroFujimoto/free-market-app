@@ -1,11 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>フリマアプリの商品詳細</title>
+        <link rel="stylesheet" href="{% static 'F.css' %}">
         <script src="static/freemarket.js"></script>
     </head>
     <body>
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+        </header><br><br>
         <h1>商品の詳細</h1>
         <img src='{{ MEDIA_URL }}{{product.picture_1}}' width="250">
         <img src='{{ MEDIA_URL }}{{product.picture_2}}' width="250">
@@ -20,5 +34,9 @@
 
         <button onclick="location.href='{% url 'confirm' %}';product_confirm()">購入へ</button>
         <button onclick="location.href='{% url 'seller_information' %}'">出品者の情報</button>
+        <!-- footer -->
+        <footer>
+            <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>

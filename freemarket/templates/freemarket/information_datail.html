@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>create</title>
+    <title>ユーザー情報・確認画面</title>
     <link rel="stylesheet" href="{% static 'destyle.css' %}">
   </head>
   <body>
@@ -19,28 +19,34 @@
           </ul>
       </nav>
     </header>
-    <br><br><br><br><br><br><br>
-    <h1>ユーザー情報</h1><br>
+    <br><br><br><br><br><br><br><br>
+    <h2 class="no2"><b>ユーザー情報【確認】</b></h2><br>
     <!--index関数のnewblogのkeyを指定-->
     <h3>学籍番号:</h3>
     <p>{{ data.title }}</p>
+    <h3>パスワード:</h3>
+    <p>{{ data.password }}</p>
     <h3>ユーザー名:</h3>
     <p>{{ data.name }}</p>
+    <h3>アイコン:</h3>
+    <p>{{ data.icon }}</p>
     <h3>自己紹介:</h3>
     <div>
-      {{ data.text | linebreaksbr }}
+        {{ data.text | linebreaksbr}}
     </div>
     <h3>住所:</h3>
     <p>{{ data.address }}</p>
     <h3>メールアドレス:</h3>
     <p>{{ data.mail }}</p>
+    <h3>取引に使うツールの情報</h3>
     <h3>LINE ID:</h3>
     <p>{{ data.line }}</p>
     <h3>Twitter ID:</h3>
-    <p>{{ data.twitter }}</p><br><br><br>
+    <p>{{ data.twitter }}</p><br>
     <form>
       <button type="button" class="button1" onclick="location.href='http://localhost:8000/'">Topへ</button>
-    </form><br><br><br><br><br><br><br><br><br><br><br>
+    </form>
+    <br><br><br><br><br><br>
     <!-- footer -->
     <footer>
       <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
