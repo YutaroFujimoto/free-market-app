@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Product
 from .models import Userdata
+from .forms import UploadForm
 
 # Create your views here.
 def index(request):
@@ -82,12 +83,19 @@ def information_detail(request, _id):
     return render(request, 'freemarket/show_information.html', context)
 
 def exhibit_finished(request):
-    product_data = Product(name = request.POST["name"], genre = request.POST["genre"], explanation = request.POST["condition"], condition = request.POST["condition"], price = request.POST["price"], shipping_cost = request.POST["shipping_cost"], picture_1 = request.POST["picture_1"], picture_2 = request.POST["picture_2"], picture_3 = request.POST["picture_3"], picture_4 = request.POST["picture_4"], )
-    product_data.save()
-    return render(request, 'freemarket/exhibit_finished.html')
+    HttpResponse('hello!')
 
 def sell_page(request):
-    return render(request, 'freemarket/sell_page.html')
+    if request.method == "POST":
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'freemarket/exhibit_finished.html')
+    else:
+        form = UploadForm()
+
+    context = {'form': form}
+    return render(request, 'freemarket/sell_page.html', context)
 
 def new_information(request):
     return render(request, 'freemarket/new_information.html')
