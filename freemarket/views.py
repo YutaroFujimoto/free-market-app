@@ -35,9 +35,6 @@ def confirm(request):
     return render(request, 'freemarket/confirm.html')
 
 def contact(request):
-    if request.POST['contact'] == mailadress:
-        context = {
-        }
     return render(request, 'freemarket/contact.html')
 
 def seller_information(request):
