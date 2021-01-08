@@ -1,13 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>連絡手段</title>
+        <link rel="stylesheet" href="{% static 'G.css' %}">
     </head>
     <body>
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+          </header>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br>
         <h1>相手との連絡手段</h1>
         <h2>以下を利用して取引を進めてください</h2>
         <p>メールアドレス：s1f102002479@~</p>
-        <button onclick="location.href='{% url 'index' %}'">TOPへ</button>
+        <form>
+            <button class="button1" onclick="location.href='{% url 'index' %}'">TOPへ</button>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- footer -->
+        <footer>
+            <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>
