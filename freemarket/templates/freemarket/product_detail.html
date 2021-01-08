@@ -19,20 +19,26 @@
                     <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
                 </ul>
             </nav>
-        </header><br><br>
+        </header><br><br><br><br><br><br>
         <h1>商品の詳細</h1>
-        <img src='{{ MEDIA_URL }}{{product.picture_1}}' width="250">
-        <img src='{{ MEDIA_URL }}{{product.picture_2}}' width="250">
-        <img src='{{ MEDIA_URL }}{{product.picture_3}}' width="250">
-        <img src='{{ MEDIA_URL }}{{product.picture_4}}' width="250">
+        <form>
+            <img src='{{ MEDIA_URL }}{{product.picture_1}}' width="250">
+            <img src='{{ MEDIA_URL }}{{product.picture_2}}' width="250">
+            <img src='{{ MEDIA_URL }}{{product.picture_3}}' width="250">
+            <img src='{{ MEDIA_URL }}{{product.picture_4}}' width="250">
+        </form>
         <p>商品名：{{ product.name }}</p>
         <p>ジャンル：{{ product.genre }}</p>
         <p>商品説明：{{ product.explanation }}</p>
         <p>商品の状態：{{ product.condition }}</p>
         <p>値段：￥{{ product.price }}</p>
         <p>配送料の負担：{{ product.shipping_cost }}</p>
-
-        <button onclick="location.href='{% url 'confirm' %}';product_confirm()">購入へ</button>
+        <br><br><br>
+        <form>
+            <button type="button" onclick="location.href='{% url 'confirm' %}';product_confirm()" class="button1">購入へ</button>
+            <button type="button" onclick="location.href='{% url 'seller_information' %}'" class="button1">出品者の情報</button>
+        </form>
+        <br><br><br><br><br>
         <!-- footer -->
         <footer>
             <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>

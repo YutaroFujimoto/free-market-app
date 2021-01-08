@@ -7,10 +7,28 @@
         <link rel="stylesheet" href="{% static 'sell.css' %}">
     </head>
     <body>
+        <header>
+            <h1>
+                <a class="no1" href="http://localhost:8000/"><b>furima</b></a>
+            </h1>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="http://localhost:8000/product_list"><b>買う</b></a></li>
+                    <li><a href="http://localhost:8000/sell_page"><b>売る</b></a></li>
+                    <li><a href="http://localhost:8000/information"><b>ユーザー情報</b></a></li>
+                </ul>
+            </nav>
+        </header>
+        <br><br><br><br><br><br>
         <form enctype="multipart/form-data" action="{% url 'sell_page' %}" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-        <button type="submit" onclick="location.href='{% url 'sell_page' %}'">出品を確定</button>
-        </form>
+            <br><br><br><br>
+        <button type="submit" onclick="location.href='{% url 'sell_page' %}'" class="button1">出品を確定</button>
+        </form><br><br><br><br><br><br>
+        <!-- footer -->
+        <footer>
+          <p>© Basic Exercise for Information Cooperation Ⅱ<br>TeamProject</p>
+        </footer>
     </body>
 </html>
