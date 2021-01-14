@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>フリマアプリのトップページ</title>
+    </head>
+
+    <body>
+        <form method="POST" action="{% url 'index' %}">
+            {% csrf_token %}
+            <label for="titleInput"><b>学籍番号:</b></label>
+            <input id="titleInput" name="title" placeholder="1f10xxxxxx" size="14" maxlength="11"><br>
+            <label for="PassInput"><b>パスワード:</b></label>
+            <input type="password" id="PassInput" name="password" placeholder="password 最大8文字" size="14" maxlength="8"><br>
+            <button type="submit" onclick="location.href='{% url 'index' %}'">ログイン</button>
+        </form>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% else %}
+        <p>正しく入力してください</p>
+        {% endif %}
+    </body>
+</html>

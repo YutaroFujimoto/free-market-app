@@ -14,6 +14,7 @@ urlpatterns = [
     path('exhibit_finished', views.exhibit_finished, name='exhibit_finished'),
     path('sell_page', views.sell_page, name='sell_page'),
     path('login', views.login, name='login'),
+    path('userlogin', views.userlogin, name='userlogin'),
     path('information', views.information, name='information'),
     path('show_information', views.show_information, name='show_information'),
     path('<int:userdata_id>', views.information_detail, name='information_detail'),

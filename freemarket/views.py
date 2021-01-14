@@ -2,10 +2,19 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Product
 from .models import Userdata
+from .models import Loginuser
 from .forms import UploadForm
 
 # Create your views here.
 def index(request):
+    if request.method == 'POST':
+        try:
+            a = Userdata.objects.filter(title=request.POST['title'])
+            if request.POST['password'] == a.password:
+                loginuser = Loginuser(title=a.title, password=a.password, name=a.name, adress=a.adress, mail=a.mail, line=a.line, twitter=a.twitter, text=a.text)
+                loginuser.save()
+        except:
+            HttpResponse('正しくありません')
     return render(request, 'freemarket/index.html')
     
 def product_list(request):
@@ -41,6 +50,11 @@ def seller_information(request):
     return render(request, 'freemarket/seller_information.html')
 
 def login(request):
+    try:
+        user = Loginuser.objects.all()
+        user.delete()
+    except:
+        return render(request, 'freemarket/login.html')   
     return render(request, 'freemarket/login.html')
 
 def information(request):
@@ -51,8 +65,8 @@ def information(request):
         context = {'data': data}
         return render(request, 'freemarket/detail.html', context) 
     else:
-        data = Userdata.objects.all() # データの取り出し
-        context = {"data" : data,} # 辞書型
+        data = Loginuser.objects.all() # データの取り出し
+        context = {"data" : data} # 辞書型
         return render(request, 'freemarket/information.html', context) # viewの表示
 
 
@@ -101,3 +115,6 @@ def detail(request):
 
 def change_information(request):
     return render(request, 'freemarket/change_information.html')
+
+def userlogin(request):
+    return render(request, 'freemarket/userlogin.html')
